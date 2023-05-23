@@ -9,7 +9,7 @@
   "license": "MIT",
   "keywords": [
     "yunfly plugin",
-    "apm"
+    "rate-limiter"
   ],
   "scripts": {
     "build": "gts clean && tsc",

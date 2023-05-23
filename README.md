@@ -29,7 +29,8 @@ yarn add @yunflyjs/yunfly-plugin-rate-limiter
 const plugins: {[key:string]: string}[] = [
   {
     name: 'rateLimiter',
-    package: '@yunflyjs/yunfly-plugin-rate-limiter'
+    package: '@yunflyjs/yunfly-plugin-rate-limiter',
+    priority: 6
   }
 ];
 // 
