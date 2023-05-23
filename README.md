@@ -47,7 +47,7 @@ config.rateLimiter = {
     // 限流规则：对整个应用限流
     {
       threshold: 100,
-      pos: 'yunfly-example-project',
+      pos: 'yunfly-example',
       rule_name: '对整个应用限流'
     },
   ]
@@ -99,7 +99,7 @@ interface ArgsOption {
 | 字段 | 类型 | 必填 |说明 |
 | ------ | ------ |------ | ------ |
 | threshold | `number` | 是 | 限流大小（单机qps） |
-| pos | `string` | 是 | 命中规则：1. Node.js 应用限流，应用名称推荐使用package.name字段 2.path路由限流  |
+| pos | `string` | 是 | 命中规则：1. Node.js 应用限流，应用名为项目package.name字段 2.path路由限流  |
 | args | `Object` | 否 | 限流附加命中规则，最多6条，规则之间为且关系 |
 | args.request | `ArgsOption[]` | 否 | 通过query或body参数进行命中（header,cookie同理） |
 | args.request.key | `string` | 否 | 命中key标识 |
@@ -122,10 +122,10 @@ interface ArgsOption {
 config.rateLimiter = {
   enable: true,
   rules: [
-    // 当 yunfly-example-project 应用qps大于100时限流生效
+    // 当 yunfly-example 应用qps大于100时限流生效
     {
       threshold: 100,
-      pos: 'yunfly-example-project',
+      pos: 'yunfly-example',
       rule_name: '对整个应用限流'
     },
   ]

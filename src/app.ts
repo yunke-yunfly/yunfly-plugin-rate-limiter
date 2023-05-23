@@ -23,8 +23,10 @@ export default function yunflyRateLimiterPlugin({ koaApp: app, pluginConfig }: R
   // 限流
   const count = config.cluster ? config.cluster.count : 0;
   const type = pluginConfig?.type;
+  const rules = pluginConfig?.rules;
   // 初始化限流
   limiter = new RateLimiter({ store: 'lru', count, type });
+  if(rules) limiter.watchRateLimiterConfig(rules);
 
   app.use(async (ctx: Context, next: () => any) => {
     const path = ctx.path || ctx.request.url;
